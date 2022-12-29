@@ -5,7 +5,7 @@ import netlifyCMSLogoDark from '../netlify-cms-logo-dark.svg';
 import { useColorMode } from '@chakra-ui/color-mode';
 
 function Landing() {
-    const { colorMode, toggleColorMode } = useColorMode();
+    const { colorMode } = useColorMode();
     return <div className="landing-container">
         <div className='logo-container'>
             <span><img src={reactLogo} className="React-logo" alt="react logo" /></span>
