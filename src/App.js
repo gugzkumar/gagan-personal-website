@@ -3,7 +3,7 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import './App.css';
 import Landing from "./Landing";
 import Blogs from "./Blogs";
@@ -38,13 +38,16 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <div className="App-Container">
-        <div className="body-container">
-          <RouterProvider router={router} />
+    <>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <ChakraProvider theme={theme}>
+        <div className="App-Container">
+          <div className="body-container">
+            <RouterProvider router={router} />
+          </div>
         </div>
-      </div>
-    </ChakraProvider>
+      </ChakraProvider>
+    </>
   );
 }
 

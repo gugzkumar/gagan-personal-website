@@ -1,6 +1,7 @@
+import './index.css';
 import blogPosts from '../cmsConfigs/posts.json';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, CardFooter, Heading, Image, Text, Button, Divider, ButtonGroup } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, Heading, Image, Text, Button, Divider, ButtonGroup, Container, Spacer, Show } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/react';
 
 
@@ -20,31 +21,34 @@ const blogPostsPreview = blogPosts.map(post => {
 const BlogPreview = (props) => {
     const { title, date, description, filePath, image } = props;
     return (
-        <Card maxW='420px' style={{ border: "1px solid lightgrey" }}>
+        <Card style={{ border: "1px solid lightgrey" }}>
             <CardBody>
-                <Image
-                    src={image}
-                    borderRadius='xl'
-                    objectFit='cover'
-                    mx='auto'
-                />
-                <Heading my='4' size='md'>
+                <Show above='lg'>
+                    <Image
+                        src={image}
+                        borderRadius='xl'
+                        objectFit='cover'
+                        mx='auto'
+                    />
+                </Show>
+                <Heading my={[2, 4]} size={['sm', 'md']}>
                     {title}
                 </Heading>
-                <Text as="i" color={'gray'}>
-                    {date.toDateString()}
-                </Text>
-                <Text>
+                <Text noOfLines={[3, 5]} size={['xs', 'sm']}>
                     {description}
                 </Text>
             </CardBody>
             <Divider></Divider>
-            <CardFooter >
-                <Link to={`/${filePath}`}>
-                    <ButtonGroup spacing='2'>
-                        <Button colorScheme='blue'>Read</Button>
-                    </ButtonGroup>
-                </Link>
+            <CardFooter className='blog-preview-card-footer'>
+                <ButtonGroup spacing='2'>
+                    <Link to={`/${filePath}`}>
+                        <Button size={['sm', 'md']} colorScheme='blue'>Read</Button>
+                    </Link>
+                </ButtonGroup>
+                <Spacer />
+                <Text as="i" color={'gray'} size={['xs', 'sm']}>
+                    {date.toDateString()}
+                </Text>
             </CardFooter>
         </Card>
     )
@@ -52,18 +56,20 @@ const BlogPreview = (props) => {
 
 const Blog = () => {
     return (
-        <SimpleGrid spacing={[4, 8, 16]} columns={[1, 2, 2, 4]} p={[4, 8, 16]}>
-            {blogPostsPreview.map(post =>
-                <BlogPreview
-                    key={post.filePath}
-                    title={post.title}
-                    date={post.date}
-                    filePath={post.filePath}
-                    image={post.image}
-                    description={post.description}
-                />
-            )}
-        </SimpleGrid>
+        <Container maxW='container.xl'>
+            <SimpleGrid spacing={[2, 8, 16]} columns={[1, 2, 2, 3]} p={[2, 8, 16]}>
+                {blogPostsPreview.map(post =>
+                    <BlogPreview
+                        key={post.filePath}
+                        title={post.title}
+                        date={post.date}
+                        filePath={post.filePath}
+                        image={post.image}
+                        description={post.description}
+                    />
+                )}
+            </SimpleGrid>
+        </Container>
     );
 }
 

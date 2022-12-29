@@ -11,5 +11,5 @@
 }
 
 .logo {
-    line-height: 30px !important;
+    line-height: unset;
 }

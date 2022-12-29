@@ -48,8 +48,6 @@ const BlogPage = (props) => {
                     </Box> :
                     <Container maxW='container.xl' p={[4, 8, 16]}>
                         <VStack align={'flex-start'} className={'blog-content'} spacing={4}>
-                            {/* <Center> */}
-                            {/* </Center> */}
                             <div>
                                 <Show above='lg'>
                                     <Image
