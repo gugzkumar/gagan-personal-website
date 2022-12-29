@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet
+} from "react-router-dom";
+import { ChakraProvider } from '@chakra-ui/react';
 import './App.css';
+import Landing from "./Landing";
+import Blogs from "./Blogs";
+import Header from "./components/Header";
+import theme from './styles/theme';
+
+function Layout() {
+  return <div><Header /><Outlet></Outlet></div>
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: "blogs",
+        element: <Blogs />,
+      },
+    ],
+  }
+])
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <div className="App-Container">
+        <div className="body-container">
+          <RouterProvider router={router} />
+        </div>
+      </div>
+    </ChakraProvider>
   );
 }
 
