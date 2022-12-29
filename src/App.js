@@ -7,6 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import './App.css';
 import Landing from "./Landing";
 import Blogs from "./Blogs";
+import BlogPage from "./Blogs/BlogPage";
 import Header from "./components/Header";
 import theme from './styles/theme';
 
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: "blogs",
-        element: <Blogs />,
+        path: "posts",
+        element: <Blogs />
+      },
+      {
+        path: "posts/:blogFileName",
+        element: <BlogPage />,
       },
     ],
   }

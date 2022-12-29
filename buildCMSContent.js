@@ -96,7 +96,8 @@ const main = () => {
             const jsonFilePath = path.join(outputFolder, `${jsonFileName}`);
             writeJSONToFile(jsonFilePath, cmsFileAsJSON);
             delete cmsFileAsJSON['body'];
-            cmsFileAsJSON['filePath'] = `${folder}/${file}`;
+            // cmsFileAsJSON['filePath'] = `${folder}/${file}`;
+            cmsFileAsJSON['filePath'] = `${folder}/${path.parse(file).name}`;
             outputFiles.push(cmsFileAsJSON);
         });
         const postConfigFilePath = path.join(__dirname, OUTPUT_CMS_CONFIGS_DIRECTORY, `${folder}.json`);
