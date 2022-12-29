@@ -11,7 +11,7 @@ const NAV_ITEMS = [
     },
     {
         label: 'Blogs',
-        href: '/blogs',
+        href: '/posts',
     }
 ];
 
@@ -25,7 +25,9 @@ function Header() {
         borderColor={useColorModeValue('gray.100', 'gray.600')}>
         <Flex width="100%" gap="2">
             <Flex>
-                <Heading className='logo' size="md">Create A React App With Netlify CMS</Heading>
+                <Heading className='logo' size={["xs", "sm","md"]}>
+                    Create A React App With Netlify CMS
+                </Heading>
             </Flex>
             <Spacer flex='1' />
             {
