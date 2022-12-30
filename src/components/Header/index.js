@@ -1,8 +1,12 @@
-import './index.css';
-import { Flex, Spacer, Button, useColorMode, useColorModeValue, Show } from '@chakra-ui/react';
-import { Box, Text, Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react';
-import { MoonIcon, SunIcon, HamburgerIcon, } from '@chakra-ui/icons';
+import {
+    Box, Button, Flex, IconButton, Menu, MenuButton,
+    MenuItem, MenuList, Show, Spacer, Text,
+    useColorMode, useColorModeValue
+} from '@chakra-ui/react';
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
+import STYLE_CONSTS from '../../styles/consts';
+import { StyledHeader } from './index.styled.js';
 
 const NAV_ITEMS = [
     {
@@ -11,17 +15,28 @@ const NAV_ITEMS = [
     },
     {
         label: 'Blogs',
-        href: '/posts',
+        href: '/blogs',
     }
 ];
 
 function Header() {
     const { colorMode, toggleColorMode } = useColorMode();
-    return <Box
-        className="header" bg={useColorModeValue('gray.200', 'gray.900')}
+    return <StyledHeader
+        className="header"
+        bg={
+            useColorModeValue(
+                STYLE_CONSTS.light.PRIMARY_COLOR,
+                STYLE_CONSTS.dark.PRIMARY_COLOR
+            )
+        }
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.100', 'gray.600')}>
+        borderColor={
+            useColorModeValue(
+                STYLE_CONSTS.light.PRIMARY_COLOR_BORDER,
+                STYLE_CONSTS.dark.PRIMARY_COLOR_BORDER
+            )
+        }>
         <Flex alignItems={'center'} width="100%" gap="2">
             <Flex className='logo'>
                 <Text
@@ -76,7 +91,7 @@ function Header() {
                 </Menu>
             </Show>
         </Flex>
-    </Box>;
+    </StyledHeader>;
 }
 
 export default Header;

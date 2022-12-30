@@ -27,7 +27,7 @@ const BlogPage = (props) => {
     useEffect(() => {
         // Write a fetch request to get the blog post
         // from the server
-        fetch(`/content/posts/${blogFileName}.json`)
+        fetch(`/content/blogs/${blogFileName}.json`)
             .then(res => res.json())
             .then(blogPost => {
                 if (blogPost['date'])

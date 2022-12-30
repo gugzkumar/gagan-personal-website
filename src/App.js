@@ -1,18 +1,21 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import './App.css';
-import Landing from "./Landing";
-import Blogs from "./Blogs";
-import BlogPage from "./Blogs/BlogPage";
+import {
+  createBrowserRouter, Outlet, RouterProvider
+} from "react-router-dom";
+import { BodyContainer } from './App.styled.js';
 import Header from "./components/Header";
+import Blogs from "./pages/Blogs";
+import BlogPage from "./pages/Blogs/BlogPage";
+import Landing from "./pages/Landing";
 import theme from './styles/theme';
 
 function Layout() {
-  return <div><Header /><Outlet></Outlet></div>
+  return <>
+    <Header />
+    <BodyContainer>
+      <Outlet />
+    </BodyContainer>
+  </>
 }
 
 const router = createBrowserRouter([
@@ -20,18 +23,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      {
-        index: true,
-        element: <Landing />,
-      },
-      {
-        path: "posts",
-        element: <Blogs />
-      },
-      {
-        path: "posts/:blogFileName",
-        element: <BlogPage />,
-      },
+      { index: true, element: <Landing /> },
+      { path: "blogs", element: <Blogs /> },
+      { path: "blogs/:blogFileName", element: <BlogPage /> },
     ],
   }
 ])
@@ -41,11 +35,7 @@ function App() {
     <>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider theme={theme}>
-        <div className="App-Container">
-          <div className="body-container">
-            <RouterProvider router={router} />
-          </div>
-        </div>
+        <RouterProvider router={router} />
       </ChakraProvider>
     </>
   );

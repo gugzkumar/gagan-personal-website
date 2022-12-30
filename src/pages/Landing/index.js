@@ -1,7 +1,7 @@
 import './index.css';
-import reactLogo from '../react-logo.svg';
-import netlifyCMSLogo from '../netlify-cms-logo.svg';
-import netlifyCMSLogoDark from '../netlify-cms-logo-dark.svg';
+import reactLogo from '../../react-logo.svg';
+import netlifyCMSLogo from '../../netlify-cms-logo.svg';
+import netlifyCMSLogoDark from '../../netlify-cms-logo-dark.svg';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Stack } from '@chakra-ui/react';
 
