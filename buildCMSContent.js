@@ -74,7 +74,7 @@ const copyFile = (srcPath, destPath) => {
 const main = () => {
     // Read public/admin/config.yml and convert it to JSON
     const { collections } = readYamlFile(path.join(__dirname, 'public/admin/config.yml'));
-    const inputFolders = collections.map(collection => collection.folder);
+    const inputFolders = collections.map(collection => collection.name);
 
     // Deletes a files in public/content and src/cmsConfigs
     deleteFolderRecursive(path.join(__dirname, `/${OUTPUT_DIRECTORY}`));

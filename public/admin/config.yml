@@ -7,9 +7,9 @@ media_folder: "public/images" # Media files will be stored in the repo under pub
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/
 
 collections:
-  - name: "blogs" # Used in routes, e.g., /admin/collections/blog
+  - name: "blogs" # Used in routes, e.g., /admin/collections/blogs
     label: "Blogs" # Used in the UI
-    folder: "blogs" # The path to the folder where the documents are stored
+    folder: "cmsContent/blogs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: json
