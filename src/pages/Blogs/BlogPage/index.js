@@ -3,7 +3,7 @@ import {
     Box, Center, Heading,
     OrderedList, UnorderedList,
     Spinner, Text, Image,
-    ListItem, Container, VStack, Divider, Show
+    ListItem, Container, VStack, Divider, Show, Code
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -17,13 +17,20 @@ const components = {
     p: ({ node, ...props }) => <Text {...props}></Text>,
     ul: ({ node, ordered, ...props }) => <UnorderedList {...props} ordered={String(ordered)} />,
     ol: ({ node, ordered, ...props }) => <OrderedList {...props} ordered={String(ordered)} />,
-    li: ({ node, ordered, ...props }) => <ListItem {...props} ordered={String(ordered)} />
+    li: ({ node, ordered, ...props }) => <ListItem {...props} ordered={String(ordered)} />,
+    img: ({ node, ...props }) => <Image {...props} maxH={450} />,
+    code: ({ node, inline, ...props }) => <Code
+        inline={String(Boolean(inline))}
+        p={(inline ? undefined : 4)}
+        colorScheme='facebook'
+        {...props} />,
 }
 
 // Create simple fuctional component
 const BlogPage = (props) => {
     const { blogFileName } = useParams();
     const [blogPost, setBlogPost] = useState(null);
+
     useEffect(() => {
         // Write a fetch request to get the blog post
         // from the server
@@ -35,7 +42,6 @@ const BlogPage = (props) => {
                 setBlogPost(blogPost);
             })
     }, [blogFileName]);
-
 
     return (
         <>
