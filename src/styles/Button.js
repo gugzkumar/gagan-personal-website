@@ -16,9 +16,11 @@ const variantPrimary = defineStyle((props) => {
         color: mode('white', 'gray.900')(props),
         _hover: {
             opacity: 0.8,
+            transition: 'opacity 0.2s',
         },
         _active: {
             opacity: 0.6,
+            transition: 'opacity 0.2s',
         }
     }
 });

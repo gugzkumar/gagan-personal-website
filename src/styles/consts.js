@@ -30,8 +30,8 @@ export const LIGHT_SECONDARY_COLOR = DARK_OLIVE_GREEN;
 
 // export const LINK_COLOR = EARTH_YELLOW;
 
-export const DARK_PRIMARY_COLOR = 'black';
-export const DARK_SECONDARY_COLOR = EARTH_YELLOW;
+export const DARK_PRIMARY_COLOR = KOMBU_GREEN;
+export const DARK_SECONDARY_COLOR = CORNSILK;
 
 // export const LINK_COLOR = EARTH_YELLOW;
 

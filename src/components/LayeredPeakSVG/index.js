@@ -1,23 +1,28 @@
 // Create a new React Component called LayeredPeakSVG that takes in a prop called color and returns the following SVG:
-//
-// <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-//   <path fill={color} fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,122.7C384,139,480,181,576,197.3C672,213,768,203,864,186.7C960,171,1056,149,1152,154.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-// </svg>
-//
-
+// Source: https://haikei.app/
+import { useColorModeValue } from '@chakra-ui/color-mode';
+import { scaleLinear } from 'd3-scale';
+import { DARK_PRIMARY_COLOR, LIGHT_PRIMARY_COLOR } from '../../styles/consts';
 
 // Create a functional React Component
 const LayeredPeakSVG = (props) => {
-    const { color1, color2, color3, color4, color5, style} = props;
-
+    const { style, ...otherProps } = props;
+    const colorScale = useColorModeValue(
+        scaleLinear()
+            .domain([1, 5])
+            .range([LIGHT_PRIMARY_COLOR, '#FFFFFF']),
+        scaleLinear()
+            .domain([1, 5])
+            .range([DARK_PRIMARY_COLOR, '#1A202C'])
+    );
 
     return (
-        <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" version="1.1" style={style}>
-            <path d="M0 449L129 367L257 373L386 363L514 416L643 430L771 350L900 440L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={color1}></path>
-            <path d="M0 438L129 393L257 396L386 425L514 421L643 410L771 408L900 427L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={color2}></path>
-            <path d="M0 503L129 492L257 468L386 485L514 443L643 500L771 453L900 459L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={color3}></path>
-            <path d="M0 521L129 531L257 533L386 543L514 540L643 501L771 497L900 524L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={color4}></path>
-            <path d="M0 537L129 570L257 549L386 573L514 542L643 557L771 531L900 569L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={color5}></path>
+        <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" version="1.1" style={style} {...otherProps}>
+            <path d="M0 533L129 504L257 538L386 504L514 537L643 506L771 516L900 503L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={colorScale(1)}></path>
+            <path d="M0 520L129 536L257 551L386 537L514 530L643 539L771 525L900 517L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={colorScale(2)}></path>
+            <path d="M0 535L129 549L257 542L386 548L514 553L643 563L771 547L900 540L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={colorScale(3)}></path>
+            <path d="M0 558L129 562L257 554L386 552L514 552L643 565L771 557L900 570L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={colorScale(4)}></path>
+            <path d="M0 586L129 573L257 578L386 574L514 586L643 580L771 574L900 578L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z" fill={colorScale(5)}></path>
         </svg>
     );
 }

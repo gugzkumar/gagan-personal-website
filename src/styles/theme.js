@@ -27,11 +27,17 @@ const theme = extendTheme({
         Heading,
     },
     styles: {
-    global: (props) => ({
-        body: {
-          bg: mode(LIGHT_PRIMARY_COLOR, DARK_PRIMARY_COLOR)(props),
-        },
-      }),
+        global: (props) => ({
+            body: {
+                // backgroundImage: mode(
+                //     `linear-gradient(to right top, ${LIGHT_PRIMARY_COLOR}, white);`,
+                //     `linear-gradient(to right top, ${DARK_PRIMARY_COLOR}, #1A202C);`,
+                //     // DARK_PRIMARY_COLOR
+                // )(props),
+                bg: mode(LIGHT_PRIMARY_COLOR, DARK_PRIMARY_COLOR)(props),
+                backgroundAttachment: 'fixed'
+            },
+        }),
     },
     config: {
         initialColorMode: initialColorMode,

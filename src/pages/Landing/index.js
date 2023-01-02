@@ -3,7 +3,7 @@ import { Container, Stack, Image, Text, Spacer, Show } from '@chakra-ui/react';
 import LayeredPeakSVG from '../../components/LayeredPeakSVG';
 
 const NAME = 'Gagan Kumar Tunuguntla';
-const ABOUT = 'I am a software engineer and this is my personal website. I blog about engineering 💻 and travel 🌎. Read my articles and check out my resume.';
+const ABOUT = 'I am a software engineer with 8+ years experience in Web Development, Data Engineering and DevOps on the cloud. I like to blog about engineering 💻 and travel 🌎. Read my articles.';
 
 function Landing() {
     return <Container maxW="container.xl" h='100%'>

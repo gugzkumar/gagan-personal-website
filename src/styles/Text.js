@@ -29,7 +29,13 @@ export const Link = defineStyleConfig({
         textDecoration: 'underline',
     },
     variants: {
-        'primary': variantPrimary,
+        'primary': {
+            ...variantPrimary,
+            _hover: {
+                opacity: 0.8,
+                transition: 'opacity 0.3s',
+            }
+        },
     }
 });
 

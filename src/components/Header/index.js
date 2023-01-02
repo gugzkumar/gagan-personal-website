@@ -9,14 +9,14 @@ import STYLE_CONSTS from '../../styles/consts';
 import { StyledHeader } from './index.styled.js';
 
 const NAV_ITEMS = [
-    {
-        label: 'Portfolio',
-        href: '/portfolio',
-    },
-    {
-        label: 'Experience',
-        href: '/experience',
-    },
+    // {
+    //     label: 'Portfolio',
+    //     href: '/portfolio',
+    // },
+    // {
+    //     label: 'Experience',
+    //     href: '/experience',
+    // },
     {
         label: 'Blogs',
         href: '/blogs',

@@ -37,16 +37,18 @@ function App() {
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
-        {/* <LayeredPeakSVG
+        <LayeredPeakSVG
             style={{
-                position: 'absolute',
+                position: 'fixed',
                 bottom: 0,
                 left: 0,
                 width: '100%',
                 height: '100%',
                 zIndex: -1
             }}
-        ></LayeredPeakSVG> */}
+            // viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+        ></LayeredPeakSVG>
       </ChakraProvider>
     </>
   );
