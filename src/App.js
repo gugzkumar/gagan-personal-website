@@ -8,6 +8,7 @@ import Blogs from "./pages/Blogs";
 import BlogPage from "./pages/Blogs/BlogPage";
 import Landing from "./pages/Landing";
 import theme from './styles/theme';
+import LayeredPeakSVG from './components/LayeredPeakSVG';
 
 function Layout() {
   return <>
@@ -36,6 +37,16 @@ function App() {
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
+        {/* <LayeredPeakSVG
+            style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: -1
+            }}
+        ></LayeredPeakSVG> */}
       </ChakraProvider>
     </>
   );

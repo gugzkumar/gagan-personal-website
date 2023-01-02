@@ -10,41 +10,35 @@ import { StyledHeader } from './index.styled.js';
 
 const NAV_ITEMS = [
     {
-        label: 'Home',
-        href: '/',
+        label: 'Portfolio',
+        href: '/portfolio',
+    },
+    {
+        label: 'Experience',
+        href: '/experience',
     },
     {
         label: 'Blogs',
         href: '/blogs',
-    }
+    },
 ];
 
 function Header() {
     const { colorMode, toggleColorMode } = useColorMode();
     return <StyledHeader
         className="header"
-        bg={
-            useColorModeValue(
-                STYLE_CONSTS.light.PRIMARY_COLOR,
-                STYLE_CONSTS.dark.PRIMARY_COLOR
-            )
-        }
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={
-            useColorModeValue(
-                STYLE_CONSTS.light.PRIMARY_COLOR_BORDER,
-                STYLE_CONSTS.dark.PRIMARY_COLOR_BORDER
-            )
-        }>
-        <Flex alignItems={'center'} width="100%" gap="2">
-            <Flex className='logo'>
-                <Text
-                    as={"b"}
-                    fontSize={["sm", "md", "xl"]}>
-                    React App With Netlify CMS
-                </Text>
-            </Flex>
+    >
+        <Flex alignItems={'center'} width="100%" gap="2" paddingX={[0, 0, 10, 10]}>
+            <Link to={'/'}>
+                <Flex className='logo' p={2}>
+                    <Text
+                        as={"b"}
+                        // variant='primary'
+                        fontSize={["md", "lg", "3xl", "4xl"]}>
+                        Gagan Kumar Tunuguntla
+                    </Text>
+                </Flex>
+            </Link>
             <Spacer flex='1' />
             <Show above='sm'>
                 {
@@ -53,7 +47,7 @@ function Header() {
                             <Link
                                 to={navItem.href ?? '#'}
                             >
-                                <Button colorScheme="blue">
+                                <Button >
                                     {navItem.label}
                                 </Button>
                             </Link>

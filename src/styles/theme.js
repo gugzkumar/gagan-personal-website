@@ -1,5 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from '@chakra-ui/theme-tools'
 import Button from "./Button";
+import Text, { Link, Heading } from "./Text";
+import Card from "./Card";
+import {
+    LIGHT_PRIMARY_COLOR,
+    LIGHT_SECONDARY_COLOR,
+    DARK_PRIMARY_COLOR,
+    DARK_SECONDARY_COLOR,
+} from "./consts";
 
 
 // Set color theme to system default
@@ -12,6 +21,17 @@ localStorage.setItem('chakra-ui-color-mode', initialColorMode);
 const theme = extendTheme({
     components: {
         Button,
+        Card,
+        Text,
+        Link,
+        Heading,
+    },
+    styles: {
+    global: (props) => ({
+        body: {
+          bg: mode(LIGHT_PRIMARY_COLOR, DARK_PRIMARY_COLOR)(props),
+        },
+      }),
     },
     config: {
         initialColorMode: initialColorMode,

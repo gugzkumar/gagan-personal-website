@@ -44,11 +44,11 @@ const BlogPreview = (props) => {
             <CardFooter alignItems='center' className='blog-preview-card-footer'>
                 <ButtonGroup spacing='2'>
                     <Link to={`/${routePath}`}>
-                        <Button size={['sm', 'md']} colorScheme='blue'>Read</Button>
+                        <Button size={['sm', 'md']} variant="primary">Read</Button>
                     </Link>
                 </ButtonGroup>
                 <Spacer />
-                <Text as="i" color={'gray'} size={['xs', 'sm']}>
+                <Text as="i" size={['xs', 'sm']} variant="primary">
                     {date.toDateString()}
                 </Text>
             </CardFooter>

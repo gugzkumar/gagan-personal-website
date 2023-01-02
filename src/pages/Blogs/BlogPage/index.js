@@ -25,9 +25,10 @@ const components = {
         p={(inline ? undefined : 4)}
         w={(inline ? undefined : '100%')}
         colorScheme='facebook'
+        wordBreak={(inline ?  'break-all': undefined)}
         {...props} />,
     pre: ({ node, ...props }) => <pre style={{width: "100%"}} {...props} />,
-    a: ({ node, ...props }) => <Link color='teal.500' isExternal {...props} />
+    a: ({ node, ...props }) => <Link variant='primary' isExternal {...props} />
 }
 
 // Create simple fuctional component

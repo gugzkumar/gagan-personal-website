@@ -6,7 +6,6 @@ export const StyledHeader = styled(Box)`
     height: ${STYLE_CONSTS.HEADER_HEIGHT};
     width: 100%;
     padding: 16px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -15,22 +14,6 @@ export const StyledHeader = styled(Box)`
 
     .logo {
         line-height: unset;
+        font-family: 'Indie Flower';
     }
 `
-
-
-// .header {
-//     height: 70px;
-//     width: 100%;
-//     padding: 16px;
-//     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
-//     display: flex;
-//     flex-direction: column;
-//     box-sizing: border-box;
-//     align-items: center;
-//     justify-content: center;
-// }
-
-// .logo {
-//     line-height: unset;
-// }
