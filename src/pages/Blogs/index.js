@@ -23,7 +23,7 @@ const blogPostsPreview = blogPosts.map(post => {
 const BlogPreview = (props) => {
     const { title, date, description, routePath, image } = props;
     return (
-        <Card style={{ border: "1px solid lightgrey" }}>
+        <Card variant={'elevated'}>
             <CardBody>
                 <Show above='lg'>
                     <Image
