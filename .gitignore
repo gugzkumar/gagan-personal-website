@@ -26,7 +26,7 @@ yarn-error.log*
 .netlify
 
 # All Rendered CMS Content
-public/content/*
+# public/content/*
 !public/content/.gitkeep
 src/cmsConfigs/*
 !src/cmsConfigs/.gitkeep
