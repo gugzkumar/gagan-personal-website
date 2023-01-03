@@ -27,15 +27,14 @@ export const Link = defineStyleConfig({
     // The styles all Text have in common
     baseStyle: {
         textDecoration: 'underline',
+        // variant: 'primary',
+        _hover: {
+            opacity: 0.8,
+            transition: 'opacity 0.3s',
+        }
     },
     variants: {
-        'primary': {
-            ...variantPrimary,
-            _hover: {
-                opacity: 0.8,
-                transition: 'opacity 0.3s',
-            }
-        },
+        'primary': variantPrimary,
     }
 });
 

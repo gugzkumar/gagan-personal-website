@@ -1,16 +1,23 @@
-// PALLETE 1
-const DARK_OLIVE_GREEN = '#606c38ff';
-const KOMBU_GREEN = '#283618ff';
-const CORNSILK = '#fefae0ff';
-const EARTH_YELLOW = '#dda15eff';
-const LIVER_DOGS = '#bc6c25ff';
+// https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25
+const DARK_OLIVE_GREEN = '#606C38';
+const KOMBU_GREEN = '#283618';
+const CORNSILK = '#FEFAE0';
+const EARTH_YELLOW = '#DDA15E';
+const LIVER_DOGS = '#BC6C25';
 
-
-const WHITE = '#ffffff';
+const WHITE = '#FFFFFF';
 const BLACK = '#000000';
 
+// Pallete 2: https://coolors.co/386641-6a994e-a7c957-f2e8cf-bc4749
+const HUNTER_GREEN = '#386641';
+const MAY_GREEN = '#6A994E';
+const ANDROID_GREEN = '#A7C957';
+const EGGSHELL = '#F2E8CF';
+const BITTERSWEET_SHIMMER = '#BC4749';
+
+
 const CONSTS = {
-    HEADER_HEIGHT: '100px',
+    HEADER_HEIGHT: '85px',
     light: {
         PRIMARY_COLOR: 'gray.200',
         PRIMARY_COLOR_BORDER: 'gray.100',
@@ -23,10 +30,10 @@ const CONSTS = {
     }
 }
 
-export const HEADER_HEIGHT = '70px';
+export const HEADER_HEIGHT = '85px';
 
-export const LIGHT_PRIMARY_COLOR = CORNSILK;
-export const LIGHT_SECONDARY_COLOR = DARK_OLIVE_GREEN;
+export const LIGHT_PRIMARY_COLOR = EGGSHELL;
+export const LIGHT_SECONDARY_COLOR = BITTERSWEET_SHIMMER;
 
 // export const LINK_COLOR = EARTH_YELLOW;
 

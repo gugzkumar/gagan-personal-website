@@ -5,9 +5,7 @@ import Text, { Link, Heading } from "./Text";
 import Card from "./Card";
 import {
     LIGHT_PRIMARY_COLOR,
-    LIGHT_SECONDARY_COLOR,
     DARK_PRIMARY_COLOR,
-    DARK_SECONDARY_COLOR,
 } from "./consts";
 
 

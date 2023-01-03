@@ -9,10 +9,10 @@ const LayeredPeakSVG = (props) => {
     const { style, ...otherProps } = props;
     const colorScale = useColorModeValue(
         scaleLinear()
-            .domain([1, 5])
+            .domain([-1, 5])
             .range([LIGHT_PRIMARY_COLOR, '#FFFFFF']),
         scaleLinear()
-            .domain([1, 5])
+            .domain([-1, 5])
             .range([DARK_PRIMARY_COLOR, '#1A202C'])
     );
 

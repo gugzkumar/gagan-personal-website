@@ -11,7 +11,8 @@ export const StyledHeader = styled(Box)`
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-
+    position: fixed;
+    top: 0;
     .logo {
         line-height: unset;
         font-family: 'Indie Flower';

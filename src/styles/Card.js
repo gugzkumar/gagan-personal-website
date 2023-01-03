@@ -23,10 +23,12 @@ const Card = defineStyleConfig({
     baseStyle: {
         container: {
             _dark: {
-                bg: DARK_PRIMARY_COLOR,
+                // bg: DARK_PRIMARY_COLOR,
+                bg: '#606C38'
             },
             _light: {
-                bg: 'none'
+                // bg: 'none',
+                bg: '#FEFAE0'
             }
         }
     },

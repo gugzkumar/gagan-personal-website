@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
-import STYLE_CONSTS from '../../styles/consts';
+import {DARK_PRIMARY_COLOR, LIGHT_PRIMARY_COLOR, HEADER_HEIGHT} from '../../styles/consts';
 import { StyledHeader } from './index.styled.js';
 
 const NAV_ITEMS = [
@@ -25,8 +25,12 @@ const NAV_ITEMS = [
 
 function Header() {
     const { colorMode, toggleColorMode } = useColorMode();
-    return <StyledHeader
+    return <>
+    <Box h={HEADER_HEIGHT}></Box>
+    <StyledHeader
         className="header"
+        bg={useColorModeValue(LIGHT_PRIMARY_COLOR, DARK_PRIMARY_COLOR)}
+        zIndex={10}
     >
         <Flex alignItems={'center'} width="100%" gap="2" paddingX={[0, 0, 10, 10]}>
             <Link to={'/'}>
@@ -47,7 +51,7 @@ function Header() {
                             <Link
                                 to={navItem.href ?? '#'}
                             >
-                                <Button >
+                                <Button>
                                     {navItem.label}
                                 </Button>
                             </Link>
@@ -85,7 +89,8 @@ function Header() {
                 </Menu>
             </Show>
         </Flex>
-    </StyledHeader>;
+    </StyledHeader>
+    </>;
 }
 
 export default Header;

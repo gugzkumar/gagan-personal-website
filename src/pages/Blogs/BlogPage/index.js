@@ -1,35 +1,14 @@
 import './index.css';
 import {
-    Box, Center, Heading,
-    OrderedList, UnorderedList,
-    Spinner, Text, Image, Link,
-    ListItem, Container, VStack, Divider, Show, Code
+    Box, Center, Heading, Spinner, Text, Image, Container, VStack, Divider, Show
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
+import { getReactMarkdownComponentMap } from '../../../utilities';
 
 // Define components for markdown rendering
-const components = {
-    h1: ({ node, ...props }) => <Heading size="xl" {...props} />,
-    h2: ({ node, ...props }) => <Heading size="lg" {...props} />,
-    h3: ({ node, ...props }) => <Heading size="md" {...props} />,
-    h4: ({ node, ...props }) => <Heading size="b" {...props} />,
-    p: ({ node, ...props }) => <Text {...props}></Text>,
-    ul: ({ node, ordered, ...props }) => <UnorderedList {...props} ordered={String(ordered)} />,
-    ol: ({ node, ordered, ...props }) => <OrderedList {...props} ordered={String(ordered)} />,
-    li: ({ node, ordered, ...props }) => <ListItem {...props} ordered={String(ordered)} />,
-    img: ({ node, ...props }) => <Image {...props} maxH={450} />,
-    code: ({ node, inline, ...props }) => <Code
-        inline={String(Boolean(inline))}
-        p={(inline ? undefined : 4)}
-        w={(inline ? undefined : '100%')}
-        colorScheme='facebook'
-        wordBreak={(inline ?  'break-all': undefined)}
-        {...props} />,
-    pre: ({ node, ...props }) => <pre style={{width: "100%"}} {...props} />,
-    a: ({ node, ...props }) => <Link variant='primary' isExternal {...props} />
-}
+const COMPONENT_MAP = getReactMarkdownComponentMap();
 
 // Create simple fuctional component
 const BlogPage = (props) => {
@@ -72,7 +51,7 @@ const BlogPage = (props) => {
                                 </Show>
                                 <VStack align={'flex-start'} spacing={2}>
                                     <Heading size={'xl'}>{blogPost.title}</Heading>
-                                    <Text as="i" color={'gray'}>{blogPost.date.toDateString()}</Text>
+                                    <Text as="i" variant='primary'>{blogPost.date.toDateString()}</Text>
                                     <Text>{blogPost.description}</Text>
                                     <Show below='lg'>
                                         <Image
@@ -86,7 +65,7 @@ const BlogPage = (props) => {
                                 </VStack>
                             </div>
                             <Divider />
-                            <ReactMarkdown components={components}>
+                            <ReactMarkdown components={COMPONENT_MAP}>
                                 {blogPost.body}
                             </ReactMarkdown>
                         </VStack>
