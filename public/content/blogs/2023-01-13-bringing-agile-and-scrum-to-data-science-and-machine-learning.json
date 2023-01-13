@@ -1,0 +1,7 @@
+{
+  "date": "2023-01-13T04:56:12.453Z",
+  "title": "Bringing Agile and Scrum to Data Science and Machine Learning",
+  "description": "Software Engineering and Data Science; while both fields require experience using code and technology to drive business value, Agile works well for one, but it can be challenging for the other. As an agile consultant in the innovation space, these are my thoughts on how to reap the benefits of Agile while making sure your Data Scientists are not nerfed.",
+  "image": "/images/pexels-thisisengineering-3862603.jpg",
+  "body": "# Why Agile is Great For Developing Software\n\n# Why Agile tends to Suck for Research\n- The ask is often too broad\n- Research takes time\n- One is deterministic, the other is probabilistic\n\nShowlife Cycle\n\nStake holders are unsatisfied by the lack of transparency, or commitment to value\nData Scientists are \n\n# Why it doesn't have to\n\n# What can you do\n\n- Show aspects of the lifecycle \n- Embrace the scientific method\n- Democratize bubble up knowledge to others in you team\n- Automate, DEV OPS\n- Invest time in tooling that can make it easier for you to report\n- Leave room in your backlog to pivot\n- Think about stories as running an experiment\n- Hire and use junior engineers to develop these experiments\n"
+}
