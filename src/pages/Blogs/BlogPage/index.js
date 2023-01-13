@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
 import { getReactMarkdownComponentMap } from '../../../utilities';
+import Footer from '../../../components/Footer';
 
 // Define components for markdown rendering
 const COMPONENT_MAP = getReactMarkdownComponentMap();
@@ -71,6 +72,7 @@ const BlogPage = (props) => {
                         </VStack>
                     </Container>
             }
+            <Footer />
         </>
     );
 }
