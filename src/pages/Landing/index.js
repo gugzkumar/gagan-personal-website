@@ -51,6 +51,7 @@ function Landing() {
             spacing="24px"
             h="100%" alignItems='center'
             gap={[3, 10, 10, 10]}
+            pb={200}
         >
             <Show below='md'>
                 <HStack spacing={[4]} w='100%' justifyContent='center'>
@@ -75,7 +76,7 @@ function Landing() {
                     src={'images/personal_pic.jpeg'}
                     alt="Picture" borderRadius={[1000, 30, 30, 30]}
                     boxShadow={'xl'}
-                    width={['200px', '400px', '400px', 'auto']}
+                    width={['200px', '350px', '400px', 'auto']}
                     mt='15px !important'
                 />
                 <Show above='md'>
